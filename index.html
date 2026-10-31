@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10141e">
+    <title>Type Matchup — Pokémon Draft Board</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">TRAINER'S TOOLKIT <span aria-hidden="true">/</span> 001</p>
+        <h1>Type Matchup<span class="title-mark">.</span></h1>
+        <p class="hero__copy">Build your battle roster. Explore a fresh pool of Pokémon, scout their stats, and find the right type for your team.</p>
+      </header>
+
+      <section class="controls" aria-label="Pokémon draft controls">
+        <div class="pool-control">
+          <div class="control-copy">
+            <p class="control-label">THE DRAFT POOL</p>
+            <p class="control-description">Deal yourself 20 random Pokémon.</p>
+          </div>
+          <button class="button button--primary" id="fetch-pool" type="button">
+            <span aria-hidden="true">↻</span>
+            Deal 20 Pokémon
+          </button>
+        </div>
+
+        <form class="search-control" id="search-form">
+          <label class="control-label" for="pokemon-search">SCOUT A POKÉMON</label>
+          <div class="search-control__fields">
+            <input id="pokemon-search" name="pokemon" type="search" placeholder="Try Pikachu or 25" autocomplete="off" required>
+            <button class="button button--secondary" type="submit">Search</button>
+          </div>
+        </form>
+      </section>
+
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+
+      <section class="spotlight-section" id="spotlight-section" aria-labelledby="spotlight-heading" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SCOUT REPORT</p>
+            <h2 id="spotlight-heading">Battle spotlight</h2>
+          </div>
+        </div>
+        <div id="spotlight"></div>
+      </section>
+
+      <section class="pool-section" id="pool-section" aria-labelledby="pool-heading" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR AVAILABLE PICKS</p>
+            <h2 id="pool-heading">Draft pool</h2>
+          </div>
+          <p class="section-note">20 picks <span aria-hidden="true">·</span> Choose your matchup</p>
+        </div>
+        <div class="pokemon-grid" id="pokemon-grid"></div>
+      </section>
+
+      <footer class="footer">
+        <span>Powered by PokéAPI</span>
+        <span>Know your type. Pick your edge.</span>
+      </footer>
+    </main>
+  </body>
+</html>
